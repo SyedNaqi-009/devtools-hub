@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { Terminal, Cpu, Zap, Shield, CheckCircle2 } from 'lucide-react';
+import { Terminal, Cpu, Zap, Shield, CheckCircle2, Award, Users, Code, Lock } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About DevTools Hub | High-Performance Engineering Utility Suite',
-  description: 'Built for developers, DevOps teams, and security researchers who need fast, zero-bloat web utilities without ads or data collection.',
+  title: 'About DevTools Hub | Engineering Philosophy & Author Profile',
+  description: 'Built for software engineers, DevOps specialists, and security researchers who require high-performance, in-browser web utilities with zero telemetry or data exfiltration.',
   alternates: {
     canonical: 'https://devtools-hub.vercel.app/about',
   },
@@ -26,45 +26,67 @@ export default function AboutPage() {
             About DevTools Hub
           </h1>
           <p className="text-carbon-300 text-sm mt-2 leading-relaxed">
-            Ultra-fast, dependable developer utilities built on Next.js 14, Web APIs, and the Carbon Engineering aesthetic.
+            Ultra-fast, dependable developer utilities built on Next.js 14, native Web APIs, and the Carbon Engineering aesthetic.
           </p>
         </div>
 
+        {/* Mission Statement */}
         <section className="space-y-4 text-sm text-carbon-200 leading-relaxed">
-          <h2 className="text-xl font-mono font-bold text-white">The Problem with Web Tools Today</h2>
+          <h2 className="text-xl font-mono font-bold text-white">Our Mission</h2>
           <p>
-            Most online developer tool websites are plagued with invasive banner ads, slow bloated bundles, third-party user tracking, 
-            and questionable privacy guarantees where proprietary source code or bearer tokens might be intercepted by external servers.
+            Developer tools on the web frequently suffer from bloated bundles, intrusive popups, deceptive download buttons, and questionable privacy models that transmit user code, private keys, or JSON payloads to remote servers.
+          </p>
+          <p>
+            <strong>DevTools Hub</strong> was engineered to solve this problem. Every tool on this platform executes <strong>100% inside your local web browser</strong> using native V8 JavaScript engines, Web Crypto APIs, and the Myers diffing algorithm. Zero bytes of your input data ever leave your machine.
           </p>
 
-          <h2 className="text-xl font-mono font-bold text-white pt-4">Our Core Philosophy</h2>
+          <h2 className="text-xl font-mono font-bold text-white pt-4">Engineering Standards</h2>
           <div className="space-y-3 font-mono text-xs">
             <div className="p-3.5 rounded bg-[#0d1015] border border-[#262d3a] flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-terminal-emerald shrink-0 mt-0.5" />
+              <Lock className="w-4 h-4 text-terminal-emerald shrink-0 mt-0.5" />
               <div>
-                <strong className="text-white">Zero Token Waste:</strong> No heavy web fonts, no bloated third-party analytics libraries, and zero 3D canvas overhead.
+                <strong className="text-white">Strict Client Isolation:</strong> Every hashing, formatting, encoding, and regex operation executes in volatile browser memory. We maintain zero backend logging pipelines.
               </div>
             </div>
             <div className="p-3.5 rounded bg-[#0d1015] border border-[#262d3a] flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-terminal-emerald shrink-0 mt-0.5" />
+              <Zap className="w-4 h-4 text-terminal-amber shrink-0 mt-0.5" />
               <div>
-                <strong className="text-white">Strict Client Isolation:</strong> Every calculation (JSON formatting, Myers text diffing, UUID generation, SHA digests) executes locally in your browser.
+                <strong className="text-white">Zero Token Waste:</strong> No heavy external web fonts, no unoptimized raster graphics, and no intrusive popups or deceptive advertisements.
               </div>
             </div>
             <div className="p-3.5 rounded bg-[#0d1015] border border-[#262d3a] flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-terminal-emerald shrink-0 mt-0.5" />
+              <Code className="w-4 h-4 text-terminal-cyan shrink-0 mt-0.5" />
               <div>
-                <strong className="text-white">Zero Fake Ads:</strong> Complete software tools without deceptive clickbait placeholders or empty wireframe ad slots.
+                <strong className="text-white">Standard Specifications:</strong> Compliant with RFC 8259 (JSON), RFC 4180 (CSV), RFC 4122 (UUID v4), RFC 4648 (Base64), and RFC 7519 (JWT).
               </div>
             </div>
           </div>
 
-          <div className="pt-6 border-t border-[#262d3a]">
+          <h2 className="text-xl font-mono font-bold text-white pt-4">Team & Maintainer Transparency</h2>
+          <p>
+            DevTools Hub is developed and maintained by independent systems engineers dedicated to building clean, accessible open-source developer tooling. 
+            For technical inquiries, feature suggestions, or security vulnerability reports, please visit our{' '}
+            <Link href="/contact" className="text-terminal-emerald hover:underline">
+              Contact Page
+            </Link>{' '}
+            or review our{' '}
+            <Link href="/privacy" className="text-terminal-emerald hover:underline">
+              Privacy Policy
+            </Link>.
+          </p>
+
+          <div className="pt-6 border-t border-[#262d3a] flex flex-wrap gap-4">
             <Link
               href="/"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-terminal-emerald text-black font-mono text-xs font-bold hover:bg-emerald-400 transition-colors"
             >
               <span>Explore All 20 Utilities</span>
+            </Link>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#12161c] text-white border border-[#262d3a] font-mono text-xs font-bold hover:bg-[#1c212a] transition-colors"
+            >
+              <span>Read Technical Articles</span>
             </Link>
           </div>
         </section>
