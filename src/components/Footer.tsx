@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
               </div>
               <span className="font-bold text-white tracking-tight">DEVTOOLS HUB</span>
             </div>
-            <p className="text-carbon-400 text-xs leading-relaxed">
+            <p className="text-carbon-400 text-xs leading-relaxed font-sans">
               Ultra-lightweight, zero-telemetry utility workbench for software engineers, security analysts, and IT professionals.
             </p>
             <div className="flex items-center gap-2 text-[11px] text-terminal-emerald pt-2">
@@ -41,24 +41,26 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 3: Architecture & Security */}
+          {/* Col 3: Resources & Guides */}
           <div>
             <h4 className="text-white font-semibold text-xs tracking-wider uppercase mb-3 text-carbon-200">
-              Architecture
+              Resources & Articles
             </h4>
             <ul className="space-y-2 text-carbon-400">
               <li>
-                <Link href="/privacy" className="hover:text-terminal-emerald transition-colors">
-                  Privacy Policy & Data Isolation
+                <Link href="/blog" className="hover:text-terminal-emerald transition-colors">
+                  Engineering Blog & Guides
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="hover:text-terminal-emerald transition-colors">
-                  Zero-Token Waste Philosophy
+                  About DevTools Hub
                 </Link>
               </li>
               <li>
-                <span className="text-carbon-500">Native Web Crypto API</span>
+                <Link href="/contact" className="hover:text-terminal-emerald transition-colors">
+                  Developer Support & Contact
+                </Link>
               </li>
               <li>
                 <span className="text-carbon-500">RFC 4122 / 4180 / 4648 Compliant</span>
@@ -66,18 +68,29 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 4: Standards */}
+          {/* Col 4: Trust & Legal Standards */}
           <div>
             <h4 className="text-white font-semibold text-xs tracking-wider uppercase mb-3 text-carbon-200">
-              Engineering Specs
+              Trust & Legal
             </h4>
-            <div className="space-y-2 text-carbon-400 text-[11px]">
-              <p>Next.js 14 App Router</p>
-              <p>Strict Client Component Isolation</p>
-              <p>Automated Semantic Breadcrumbs</p>
-              <p>Zero Third-Party Tracking Scripts</p>
+            <div className="space-y-2 text-carbon-400">
+              <div>
+                <Link href="/privacy" className="hover:text-terminal-emerald transition-colors">
+                  Privacy Policy (Zero Exfiltration)
+                </Link>
+              </div>
+              <div>
+                <Link href="/terms" className="hover:text-terminal-emerald transition-colors">
+                  Terms & Conditions
+                </Link>
+              </div>
+              <div>
+                <Link href="/disclaimer" className="hover:text-terminal-emerald transition-colors">
+                  Disclaimer & Notices
+                </Link>
+              </div>
               <div className="pt-2">
-                <span className="inline-block px-2 py-0.5 rounded bg-[#12161c] border border-[#262d3a] text-terminal-emerald font-mono">
+                <span className="inline-block px-2 py-0.5 rounded bg-[#12161c] border border-[#262d3a] text-terminal-emerald font-mono text-[10px]">
                   v1.0.0-PROD
                 </span>
               </div>
@@ -89,12 +102,21 @@ export const Footer: React.FC = () => {
           <div>
             &copy; {new Date().getFullYear()} DevTools Hub. Designed with Carbon Engineering standards.
           </div>
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-white transition-colors">
-              Privacy Notice
-            </Link>
+          <div className="flex flex-wrap items-center gap-6">
             <Link href="/about" className="hover:text-white transition-colors">
               About
+            </Link>
+            <Link href="/contact" className="hover:text-white transition-colors">
+              Contact
+            </Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Terms
+            </Link>
+            <Link href="/disclaimer" className="hover:text-white transition-colors">
+              Disclaimer
             </Link>
             <Link href="/sitemap.xml" className="hover:text-white transition-colors">
               Sitemap

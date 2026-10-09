@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { BLOG_POSTS } from '@/lib/blog-data';
-import { AdSenseSlot } from '@/components/AdSenseSlot';
-import { BookOpen, Calendar, Clock, ArrowRight, Sparkles, Tag } from 'lucide-react';
+import { BookOpen, Calendar, Clock, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Engineering Blog & Developer Tutorials | DevTools Hub',
@@ -41,9 +40,6 @@ export default function BlogIndexPage() {
             Designed for software engineers seeking accurate specifications and zero fluff.
           </p>
         </div>
-
-        {/* AdSense Placement Top */}
-        <AdSenseSlot slotId="blog-top-banner" format="horizontal" />
 
         {/* Articles List */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -99,9 +95,6 @@ export default function BlogIndexPage() {
             </article>
           ))}
         </div>
-
-        {/* AdSense Placement Bottom */}
-        <AdSenseSlot slotId="blog-bottom-banner" format="horizontal" />
       </div>
     </div>
   );

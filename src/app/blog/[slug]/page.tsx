@@ -3,8 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { BLOG_POSTS, getBlogPostBySlug } from '@/lib/blog-data';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { AdSenseSlot } from '@/components/AdSenseSlot';
-import { Calendar, Clock, ArrowLeft, ArrowRight, Wrench, Share2 } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, ArrowRight, Wrench } from 'lucide-react';
 
 interface BlogPostPageProps {
   params: {
@@ -138,9 +137,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </header>
 
-        {/* In-Article Top Ad Placement */}
-        <AdSenseSlot slotId="article-top-banner" format="horizontal" />
-
         {/* Article Body Content */}
         <div className="text-carbon-200 text-sm leading-relaxed space-y-6">
           {post.content.split('### ').map((section, idx) => {
@@ -167,9 +163,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             );
           })}
         </div>
-
-        {/* Mid-Article Ad Placement */}
-        <AdSenseSlot slotId="article-middle-banner" format="rectangle" />
 
         {/* Interactive Utility Callout Banner */}
         <div className="p-6 rounded-lg bg-[#0d1015] border border-terminal-emerald/40 space-y-3 font-mono text-xs">
@@ -208,9 +201,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             <span>Explore All 20 Utilities &rarr;</span>
           </Link>
         </footer>
-
-        {/* Bottom Ad Placement */}
-        <AdSenseSlot slotId="article-bottom-banner" format="horizontal" />
       </article>
     </div>
   );
