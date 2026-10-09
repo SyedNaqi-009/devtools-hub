@@ -1,0 +1,107 @@
+import React from 'react';
+import Link from 'next/link';
+import { Terminal, Shield, Lock, Cpu, Code2, ExternalLink } from 'lucide-react';
+import { CATEGORIES } from '@/lib/tools-data';
+
+export const Footer: React.FC = () => {
+  return (
+    <footer className="border-t border-[#262d3a] bg-[#080a0d] text-carbon-300 font-mono text-xs mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          {/* Col 1: Brand & Philosophy */}
+          <div className="space-y-3 md:col-span-1">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 rounded bg-[#12161c] border border-[#262d3a] flex items-center justify-center text-terminal-emerald">
+                <Terminal className="w-3.5 h-3.5" />
+              </div>
+              <span className="font-bold text-white tracking-tight">DEVTOOLS HUB</span>
+            </div>
+            <p className="text-carbon-400 text-xs leading-relaxed">
+              Ultra-lightweight, zero-telemetry utility workbench for software engineers, security analysts, and IT professionals.
+            </p>
+            <div className="flex items-center gap-2 text-[11px] text-terminal-emerald pt-2">
+              <Lock className="w-3.5 h-3.5" />
+              <span>100% Client-Side In-Memory Execution</span>
+            </div>
+          </div>
+
+          {/* Col 2: Categories */}
+          <div>
+            <h4 className="text-white font-semibold text-xs tracking-wider uppercase mb-3 text-carbon-200">
+              Tool Categories
+            </h4>
+            <ul className="space-y-2 text-carbon-400">
+              {CATEGORIES.map((cat) => (
+                <li key={cat.id}>
+                  <Link href={`/#${cat.id}`} className="hover:text-terminal-emerald transition-colors">
+                    {cat.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 3: Architecture & Security */}
+          <div>
+            <h4 className="text-white font-semibold text-xs tracking-wider uppercase mb-3 text-carbon-200">
+              Architecture
+            </h4>
+            <ul className="space-y-2 text-carbon-400">
+              <li>
+                <Link href="/privacy" className="hover:text-terminal-emerald transition-colors">
+                  Privacy Policy & Data Isolation
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-terminal-emerald transition-colors">
+                  Zero-Token Waste Philosophy
+                </Link>
+              </li>
+              <li>
+                <span className="text-carbon-500">Native Web Crypto API</span>
+              </li>
+              <li>
+                <span className="text-carbon-500">RFC 4122 / 4180 / 4648 Compliant</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4: Standards */}
+          <div>
+            <h4 className="text-white font-semibold text-xs tracking-wider uppercase mb-3 text-carbon-200">
+              Engineering Specs
+            </h4>
+            <div className="space-y-2 text-carbon-400 text-[11px]">
+              <p>Next.js 14 App Router</p>
+              <p>Strict Client Component Isolation</p>
+              <p>Automated Semantic Breadcrumbs</p>
+              <p>Zero Third-Party Tracking Scripts</p>
+              <div className="pt-2">
+                <span className="inline-block px-2 py-0.5 rounded bg-[#12161c] border border-[#262d3a] text-terminal-emerald font-mono">
+                  v1.0.0-PROD
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-[#1c212a] flex flex-col sm:flex-row items-center justify-between gap-4 text-carbon-400 text-[11px]">
+          <div>
+            &copy; {new Date().getFullYear()} DevTools Hub. Designed with Carbon Engineering standards.
+          </div>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              Privacy Notice
+            </Link>
+            <Link href="/about" className="hover:text-white transition-colors">
+              About
+            </Link>
+            <Link href="/sitemap.xml" className="hover:text-white transition-colors">
+              Sitemap
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
