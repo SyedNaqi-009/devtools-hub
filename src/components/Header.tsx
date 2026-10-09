@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Terminal, Shield, Cpu, Search, Menu, X, Command } from 'lucide-react';
+import { Terminal, Shield, Cpu, Search, Menu, X, BookOpen } from 'lucide-react';
 import { TOOLS } from '@/lib/tools-data';
 
 export const Header: React.FC = () => {
@@ -48,7 +48,18 @@ export const Header: React.FC = () => {
                   : 'text-carbon-300 hover:text-white hover:bg-[#12161c]'
               }`}
             >
-              /all-tools
+              /tools
+            </Link>
+            <Link
+              href="/blog"
+              className={`px-3 py-1.5 rounded transition-colors flex items-center gap-1.5 ${
+                pathname.startsWith('/blog')
+                  ? 'text-terminal-emerald bg-[#161b22]'
+                  : 'text-carbon-300 hover:text-white hover:bg-[#12161c]'
+              }`}
+            >
+              <BookOpen className="w-3.5 h-3.5" />
+              <span>/blog</span>
             </Link>
             <Link
               href="/privacy"
@@ -58,7 +69,7 @@ export const Header: React.FC = () => {
                   : 'text-carbon-300 hover:text-white hover:bg-[#12161c]'
               }`}
             >
-              /privacy-policy
+              /privacy
             </Link>
             <Link
               href="/about"
@@ -146,6 +157,13 @@ export const Header: React.FC = () => {
             className="block px-3 py-2 rounded text-carbon-200 hover:bg-[#12161c]"
           >
             All 20 Utilities
+          </Link>
+          <Link
+            href="/blog"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block px-3 py-2 rounded text-carbon-200 hover:bg-[#12161c]"
+          >
+            Engineering Blog & Tutorials
           </Link>
           <Link
             href="/privacy"
